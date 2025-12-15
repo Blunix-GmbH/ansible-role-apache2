@@ -1,0 +1,4 @@
+# Apache2 setup play mirroring production usage
+- hosts: cus-dev-prod-web-1
+  roles:
+    - ansible-role-apache2

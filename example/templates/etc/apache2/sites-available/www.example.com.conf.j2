@@ -1,0 +1,21 @@
+# {{ ansible_cake_managed }}
+
+<VirtualHost *:80>
+
+    ErrorLog syslog:local7
+    CustomLog ${APACHE_LOG_DIR}/www.example.com-access.log graylog_access
+
+    DocumentRoot /var/www/html
+    <Directory /var/www/html>
+        AuthType Basic
+        AuthName "Restricted"
+        AuthUserFile /etc/apache2/htpasswd
+        Require all denied
+        <RequireAny>
+            Require valid-user
+            Require env ACCESS
+        </RequireAny>
+        Options Indexes FollowSymLinks MultiViews
+        AllowOverride All
+    </Directory>
+</VirtualHost>

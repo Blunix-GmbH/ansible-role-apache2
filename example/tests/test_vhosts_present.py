@@ -7,4 +7,4 @@ testinfra_hosts = testinfra.utils.ansible_runner.AnsibleRunner(
 
 
 def test_absent_vhost(host):
-    assert host.file('/etc/apache2/sites-enabled/000-my-default.conf').exists
+    assert host.file('/etc/apache2/sites-enabled/www.example.com.conf').exists

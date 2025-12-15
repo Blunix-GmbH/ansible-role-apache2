@@ -3,9 +3,7 @@ apache2_module_packages_installed: []
 apache2_disable_modules: []
 apache2_enable_modules: []
 apache2_vhosts_absent: []
-apache2_includes:
-  - ssl
-  - gzip
+apache2_includes: []
 apache2_htpasswd_file: /etc/apache2/htpasswd/default
 apache2_htpasswd_present: []
 apache2_htpasswd_absent: []

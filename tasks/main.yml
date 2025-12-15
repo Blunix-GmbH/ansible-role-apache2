@@ -3,6 +3,7 @@
     name:
       - apache2
       - python3-passlib
+      - apache2-utils
     state: present
 
 - name: install custom packages related to apache2

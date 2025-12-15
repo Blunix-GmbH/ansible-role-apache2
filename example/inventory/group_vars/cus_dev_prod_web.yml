@@ -1,0 +1,64 @@
+# Includable snippets from templates/etc/apache2/includes/<name>.conf.j2
+apache2_includes:
+  - ssl
+  - gzip
+
+# APT packages to install
+apache2_module_packages_installed:
+  - apache2-utils
+  - libapache2-mod-security2
+  - libapache2-mod-evasive
+  - libapache2-mod-fcgid
+  - modsecurity-crs
+
+# APT packages to remove
+apache2_module_packages_removed:
+  - libapache2-mod-dnssd
+
+# a2enmod modules to enable
+apache2_enable_modules:
+  - actions
+  - expires
+  - setenvif
+  - deflate
+  - ssl
+  - alias
+  - authz_core
+  - mpm_event
+  - security2
+  - headers
+  - cgid
+  - proxy
+  - proxy_http
+  - proxy_fcgi
+  - request
+  - rewrite
+  - vhost_alias
+
+# a2dismod modules to disable
+apache2_disable_modules:
+  - evasive
+  - mpm_prefork
+  - autoindex
+
+# htpasswd users to create in /etc/apache2/htpasswd
+# From passage-store
+apache2_htpasswd_present:
+  - name: john
+    pass: secret
+  - name: jim
+    pass: agent
+# Htpasswd users to remove
+apache2_htpasswd_absent:
+  - james
+  - john
+
+# Example vhost list consumed by the play (inventory-driven)
+apache2_vhosts_present:
+  - name: "www.example.com"
+    template: "templates/etc/apache2/sites-available/www.example.com.conf.j2"
+
+# Vhosts to remove
+apache2_vhosts_absent:
+  - 000-default
+
